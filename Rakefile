@@ -72,6 +72,11 @@ task :install_homebrew do
   install_homebrew if want_to_install?( 'homebrew' )
 end
 
+desc "Install Neovim"
+task :install_neovim do
+  install_neovim if want_to_install?( 'neovim' )
+end
+
 task :default => 'install'
 
 
@@ -323,6 +328,16 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 
   run %{ /usr/libexec/PlistBuddy -c "Merge '#{color_scheme_path}' :'New Bookmarks':#{index}" ~/Library/Preferences/com.googlecode.iterm2.plist }
   run %{ defaults read com.googlecode.iterm2 }
+end
+
+def install_neovim
+  return if system('which nvim')
+
+  puts "=========================================================="
+  puts "Installing Neovim"
+  puts "=========================================================="
+  run %{ brew install neovim }
+  puts 
 end
 
 def success_msg(action)
