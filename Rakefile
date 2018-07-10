@@ -10,7 +10,7 @@ task :install => [:submodule_init, :submodules] do
   puts "======================================================"
   puts
 
-  install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
+  install_homebrew
   install_rvm_binstubs
 
   # this has all the runcoms from this directory.
@@ -67,6 +67,11 @@ task :submodules do
   end
 end
 
+desc "Install Homebrew"
+task :install_homebrew do
+  install_homebrew if want_to_install?( 'homebrew' )
+end
+
 task :default => 'install'
 
 
@@ -108,13 +113,30 @@ def install_rvm_binstubs
 end
 
 def install_homebrew
-  run %{which brew}
-  unless $?.success?
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    run %{which brew}
+    unless $?.success?
+      puts "======================================================"
+      puts "Installing Homebrew, the OSX package manager."
+      run %{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+      puts "======================================================"
+    end
+  elsif RUBY_PLATFORM.downcase.include?("linux")
+    run %{ which brew }
+    unless $?.success?
+      puts "======================================================"
+      puts "Installing Linuxbrew for Linux platform"
+      run %{ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" }
+      puts "Adding Linuxbrew to zsh profile"
+      run %{ test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH" }
+      run %{ echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' > ~/.zsh.before/homebrew.zsh }
+      puts "======================================================"
+    end
+  else
     puts "======================================================"
-    puts "Installing Homebrew, the OSX package manager...If it's"
-    puts "already installed, this will do nothing."
+    puts "Unknown platform, can't install Homebrew"
     puts "======================================================"
-    run %{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+    return
   end
 
   puts
@@ -128,7 +150,7 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi}
+  run %{ brew install zsh git tmux reattach-to-user-namespace the_silver_searcher }
   puts
   puts
 end
