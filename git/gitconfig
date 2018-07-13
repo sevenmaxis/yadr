@@ -126,5 +126,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	email = Sergey Gopkalo
+	email = Sergey Gopkalo@gmail.com
 	name = Serhii Hopkalo
