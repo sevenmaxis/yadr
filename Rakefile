@@ -21,7 +21,6 @@ task :install => [:submodule_init, :submodules] do
   install_files('tmux/*') if want_to_install?('tmux config')
   install_files('vimify/*') if want_to_install?('vimification of command line tools')
 
-
   Rake::Task["install_prezto"].execute
 
   install_fonts
@@ -342,6 +341,8 @@ def install_neovim
   puts "=========================================================="
   run %{ brew install neovim }
   puts 
+  install_files('config/*') 
+  Rake::Task["install_plug"].execute
 end
 
 def success_msg(action)
