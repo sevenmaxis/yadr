@@ -14,12 +14,13 @@ task :install => [:submodule_init, :submodules] do
   install_rvm_binstubs
 
   # this has all the runcoms from this directory.
-  install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
-  install_files(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
-  install_files(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
-  install_files(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
-  install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
-  install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+  install_files('git/*') if want_to_install?('git configs (color, aliases)')
+  install_files('irb/*') if want_to_install?('irb/pry configs (more colorful)')
+  install_files('ruby/*') if want_to_install?('rubygems config (faster/no docs)')
+  install_files('ctags/*') if want_to_install?('ctags config (better js/ruby support)')
+  install_files('tmux/*') if want_to_install?('tmux config')
+  install_files('vimify/*') if want_to_install?('vimification of command line tools')
+
 
   Rake::Task["install_prezto"].execute
 
@@ -244,7 +245,7 @@ def install_prezto
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
   # The prezto runcoms are only going to be installed if zprezto has never been installed
-  install_files(Dir.glob('zsh/prezto/runcoms/z*'), :symlink)
+  install_files('zsh/prezto/runcoms/z*')
 
   puts
   puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
@@ -281,7 +282,10 @@ def want_to_install? (section)
   end
 end
 
-def install_files(files, method = :symlink)
+def install_files(*files)
+  files = Dir.glob(files)
+  method = :symlink # temporarily
+  
   files.each do |f|
     file = f.split('/').last
     source = "#{ENV["PWD"]}/#{f}"
