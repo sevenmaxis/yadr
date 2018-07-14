@@ -42,6 +42,10 @@ call plug#begin('~/.config/nvim/plugged')
 	set autowrite
 	set autowriteall
 
+	" persistent-undo
+	set undodir=~/.vim/undo
+	set undofile
+
 	set history=1000 " change history to 1000
 	set textwidth=120
 
