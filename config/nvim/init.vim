@@ -84,9 +84,8 @@ call plug#begin('~/.config/nvim/plugged')
 " }}}
 
 " Appearance {{{
-	set number " show line numbers
-	set wrap " turn on line wrapping
-	set wrapmargin=8 " wrap lines when coming within n characters from side
+	set nowrap
+	set wrapmargin=0 " wrap lines when coming within n characters from side
 	set linebreak " set soft wrapping
 	set showbreak=… " show ellipsis at breaking
 	set autoindent " automatically set indent of new line
