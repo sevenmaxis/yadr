@@ -15,6 +15,20 @@ call plug#begin('~/.config/nvim/plugged')
 	abbr attribtue attribute
 	abbr attribuet attribute
 
+	" improove key navigation usability
+	nnoremap k kzz
+	nnoremap j jzz
+	nnoremap p pzz
+	nnoremap P Pzz
+	nnoremap G Gzz
+	nnoremap x xzz
+	inoremap <ESC> <ESC>zz
+	nnoremap <ENTER> <ENTER>zz
+	inoremap <ENTER> <ENTER><ESC>zza
+	nnoremap o o<ESC>zza
+	nnoremap O O<ESC>zza
+	nnoremap a a<ESC>zza
+
 	set autoread " detect when a file is changed
 
 	set history=1000 " change history to 1000
