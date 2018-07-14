@@ -29,6 +29,14 @@ call plug#begin('~/.config/nvim/plugged')
 	nnoremap O O<ESC>zza
 	nnoremap a a<ESC>zza
 
+	set nohidden " avoid keeping buffers in background
+
+	" Turn Off Swap Files
+	set nobackup
+	set noswapfile
+	set nowb
+	set nowritebackup
+
 	set autoread " detect when a file is changed
 
 	set history=1000 " change history to 1000
