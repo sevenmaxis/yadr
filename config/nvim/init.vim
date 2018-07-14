@@ -121,7 +121,7 @@ call plug#begin('~/.config/nvim/plugged')
 	set foldlevel=1
 
 	" toggle invisible characters
-	set list
+	set nolist
 	set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 	set showbreak=↪
 
@@ -261,13 +261,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General Mappings {{{
 	" set a map leader for more key combos
-	let mapleader = ','
+	let mapleader = '\'
 
-	" remap esc
-	inoremap jk <esc>
+  " wipout buffer
+  nmap <silent> <leader>b :bw<cr>
 
 	" shortcut to save
-	nmap <leader>, :w<cr>
+	nmap <leader>s :w<cr>
 
 	" set paste toggle
 	set pastetoggle=<leader>v
@@ -564,7 +564,7 @@ call plug#begin('~/.config/nvim/plugged')
 			nmap <silent> <leader>t :FZF<cr>
 		endif
 
-		nmap <silent> <leader>s :GFiles?<cr>
+		nmap <silent> <leader>g :GFiles?<cr>
 
 		nmap <silent> <leader>r :Buffers<cr>
 		nmap <silent> <leader>e :FZF<cr>
