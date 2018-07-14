@@ -37,7 +37,10 @@ call plug#begin('~/.config/nvim/plugged')
 	set nowb
 	set nowritebackup
 
+	" autoread and autowrite
 	set autoread " detect when a file is changed
+	set autowrite
+	set autowriteall
 
 	set history=1000 " change history to 1000
 	set textwidth=120
