@@ -740,7 +740,27 @@ nnoremap q <Nop>
 		let g:vim_json_syntax_conceal = 0
 	" }}}
 
-	Plug 'fatih/vim-go', { 'for': 'go' }
+  " Go {{{
+    Plug 'fatih/vim-go', { 'for': 'go' }
+    Plug 'jnwhiteh/vim-golang'
+    Plug 'sebdah/vim-delve'
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_build_constraints = 1
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_extra_types = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_build_constraints = 1
+    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=3 shiftwidth=3
+  " }}}
+
+  " Rust {{{
+    Plug 'sebastianmarkow/deoplete-rust' " Rust completion for Deoplete via Racerv
+  " }}}
+
 	Plug 'timcharper/textile.vim', { 'for': 'textile' }
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
