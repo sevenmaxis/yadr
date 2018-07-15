@@ -642,10 +642,11 @@ nnoremap q <Nop>
 
 	" ALE {{{
 		Plug 'w0rp/ale' " Asynchonous linting engine
-		let g:ale_change_sign_column_color = 0
-		let g:ale_sign_column_always = 1
+		let g:ale_change_sign_column_color = 1
+		let g:ale_sign_column_always = 0
 		let g:ale_sign_error = '✖'
 		let g:ale_sign_warning = '⚠'
+    let g:ale_set_highlights = 0
 
 		let g:ale_linters = {
 		\	'javascript': ['eslint'],
@@ -662,7 +663,9 @@ nnoremap q <Nop>
 
 	" UltiSnips {{{
 		Plug 'SirVer/ultisnips' " Snippets plugin
-		let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsExpandTrigger="<c-i>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 	" }}}
 " }}}
 
