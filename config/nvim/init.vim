@@ -628,16 +628,6 @@ nnoremap q <Nop>
   \   'right': winwidth('.') / 2,
   \   'sink':  'vertical botright split' })<CR>
 
-	" signify {{{
-		" Plug 'airblade/vim-gitgutter'
-		Plug 'mhinz/vim-signify'
-		let g:signify_vcs_list = [ 'git' ]
-		let g:signify_sign_add				 = '+'
-		let g:signify_sign_delete			 = '_'
-		let g:signify_sign_delete_first_line = '‾'
-		let g:signify_sign_change = '!'
-	" }}}
-
 	" vim-fugitive {{{
 		Plug 'tpope/vim-fugitive'
 		Plug 'tpope/vim-rhubarb' " hub extension for fugitive
