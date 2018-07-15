@@ -391,8 +391,11 @@ nnoremap q <Nop>
 	" substitute, search, and abbreviate multiple variants of a word
 	Plug 'tpope/vim-abolish'
 
-	" search inside files using ripgrep. This plugin provides an Ack command.
-	Plug 'wincent/ferret'
+  " search inside files using ag - The Silver Searcher
+  Plug 'rking/ag.vim'
+
+  " Make Ag searches of selected text
+  Plug 'Chun-Yang/vim-action-ag'
 
 	" insert or delete brackets, parens, quotes in pair
 	Plug 'jiangmiao/auto-pairs'
