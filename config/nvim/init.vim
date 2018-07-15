@@ -354,6 +354,10 @@ call plug#begin('~/.config/nvim/plugged')
 
 	command! Rm call functions#Delete()
 	command! RM call functions#Delete() <Bar> q!
+
+	" Yank from cursor to end of line {{{
+	nnoremap Y y$
+  " }}}
 " }}}
 
 " AutoGroups {{{
