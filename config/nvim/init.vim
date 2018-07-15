@@ -147,6 +147,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" Load colorschemes
 	Plug 'chriskempson/base16-vim'
 	Plug 'joshdick/onedark.vim'
+  Plug 'rakr/vim-one'
 
 	" LightLine {{{
 		Plug 'itchyny/lightline.vim'
@@ -725,7 +726,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'timcharper/textile.vim', { 'for': 'textile' }
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-  Plug 'joshdick/onedark.vim'
 " }}}
 
 call plug#end()
