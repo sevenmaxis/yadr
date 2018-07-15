@@ -334,15 +334,18 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 end
 
 def install_neovim
-  return if system('which nvim')
-
-  puts "=========================================================="
-  puts "Installing Neovim"
-  puts "=========================================================="
-  run %{ brew install neovim }
-  puts 
-  install_files('config/*') 
-  Rake::Task["install_plug"].execute
+  unless system('which nvim')
+    puts "=========================================================="
+    puts "Installing Neovim"
+    puts "=========================================================="
+    run %{ brew install neovim }
+    puts
+    puts "=========================================================="
+    puts "Installing plugins for Neovim"
+    puts "=========================================================="
+    run %{ nvim +PlugUpdate +qall }
+    puts ""
+  end
 end
 
 def success_msg(action)
