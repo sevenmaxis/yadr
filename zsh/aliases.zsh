@@ -212,6 +212,18 @@ alias dbmu='spring rake db:migrate:up'
 # Homebrew
 alias brewu='brew update  && brew upgrade && brew cleanup && brew prune && brew doctor'
 
+mktouch() {
+  if [ $# -lt 1 ]; then
+    echo "Missing argument";
+    return 1;
+  fi
+
+  for f in "$@"; do
+    mkdir -p -- "$(dirname -- "$f")"
+    touch -- "$f"
+  done
+}
+
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
 fi
