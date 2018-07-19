@@ -155,7 +155,10 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{ brew install zsh git tmux reattach-to-user-namespace the_silver_searcher fzf tig }
+  run %{
+    brew install zsh git tmux reattach-to-user-namespace the_silver_searcher fzf tig
+    translate-shell
+  }
   # To install useful key bindings and fuzzy completion
   run %{ $(brew --prefix)/opt/fzf/install }
   puts
