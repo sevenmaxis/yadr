@@ -242,3 +242,5 @@ function e() {
   fi
   printf '%s\n' "${(P)1}"
 }
+
+alias nv=nvim
