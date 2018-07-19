@@ -45,6 +45,9 @@ fi
 # show me files matching "ls grep"
 alias lsg='ll | grep'
 
+# show files matching "ls ag"
+alias lsa='ll | ag'
+
 # Alias Editing
 TRAPHUP() {
   source $yadr/zsh/aliases.zsh
