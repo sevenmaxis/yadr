@@ -211,3 +211,12 @@ alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update  && brew upgrade && brew cleanup && brew prune && brew doctor'
+
+unalias e &>/dev/null
+function e() {
+  if [ $# -lt 1 ]; then
+    echo "Missing an argument"
+    return 1;
+  fi
+  printf '%s\n' "${(P)1}"
+}
