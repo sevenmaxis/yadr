@@ -212,6 +212,10 @@ alias dbmu='spring rake db:migrate:up'
 # Homebrew
 alias brewu='brew update  && brew upgrade && brew cleanup && brew prune && brew doctor'
 
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
+fi
+
 # Temporarely: delete line '${(z)VISUAL:-${(z)EDITOR}}'"
 # in file zsh/prezto/modules/utility/init.zsh
 unalias e &>/dev/null
