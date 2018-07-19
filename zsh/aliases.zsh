@@ -216,6 +216,17 @@ elif [[ $platform == 'linux' ]]; then
   alias brewu='brew doctor && brew upgrade && brew update'
 fi
 
+# Translate Shell
+function t {
+  case "$*" in
+    [A-Za-z]* ) trans -sp en:ru $*
+      ;;
+    [А-Яа-я]* ) trans -p ru:en $*
+      ;;
+    *)          echo "wrong language"
+  esac
+}
+
 mktouch() {
   if [ $# -lt 1 ]; then
     echo "Missing argument";
