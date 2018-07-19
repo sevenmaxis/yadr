@@ -208,7 +208,13 @@ alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
-alias brewu='brew update  && brew upgrade && brew cleanup && brew prune && brew doctor'
+if [[ $platform == 'darwin' ]]; then
+  alias brewu='brew update && brew upgrade &&\
+              brew cleanup && brew cask cleanup &&\
+              brew prune && brew doctor'
+elif [[ $platform == 'linux' ]]; then
+  alias brewu='brew doctor && brew upgrade && brew update'
+fi
 
 mktouch() {
   if [ $# -lt 1 ]; then
