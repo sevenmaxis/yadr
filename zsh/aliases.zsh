@@ -32,10 +32,12 @@ alias cls='clear;ls'
 alias df='df -h'
 alias du='du -h -d 2'
 
+unalias ll 2>/dev/null
 if [[ $platform == 'linux' ]]; then
   alias ll='ls -alh --color=auto'
   alias ls='ls --color=auto'
 elif [[ $platform == 'darwin' ]]; then
+  function ll { ls -alGh $@ | ag -v '.DS_Store|.localized';}
   alias ll='ls -alGh'
   alias ls='ls -Gh'
 fi
