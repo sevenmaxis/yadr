@@ -84,6 +84,8 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Autosave on lose focus
   au BufLeave * silent! wall
+
+  set clipboard=unnamed
 " }}}
 
 " Appearance {{{
