@@ -371,9 +371,6 @@ nnoremap q <Nop>
 	" add end, endif, etc. automatically
 	Plug 'tpope/vim-endwise'
 
-	" detect indent style (tabs vs. spaces)
-	Plug 'tpope/vim-sleuth'
-
 	" a simple tool for presenting slides in vim based on text files
 	Plug 'sotte/presenting.vim', { 'for': 'markdown' }
 
