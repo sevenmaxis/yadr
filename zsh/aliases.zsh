@@ -264,4 +264,5 @@ function e() {
   printf '%s\n' "${(P)1}"
 }
 
+alias pb="tr -d '\n' | pbcopy"
 alias nv=nvim
