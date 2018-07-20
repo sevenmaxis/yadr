@@ -81,6 +81,9 @@ call plug#begin('~/.config/nvim/plugged')
 	set visualbell
 	set t_vb=
 	set tm=500
+
+  " Autosave on lose focus
+  au BufLeave * silent! wall
 " }}}
 
 " Appearance {{{
