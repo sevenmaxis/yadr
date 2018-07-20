@@ -14,3 +14,15 @@ bindkey -s "^[Op" "0"
 bindkey -s "^[Ol" "."
 bindkey -s "^[OM" "^M"
 
+# Clear terminal on empty enter
+magic-enter () {
+   if [[ -z $BUFFER ]]
+   then
+           zle clear-screen
+   else
+           zle accept-line
+   fi
+}
+zle -N magic-enter
+bindkey "^M" magic-enter
+
