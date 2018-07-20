@@ -209,6 +209,9 @@ alias dbmu='spring rake db:migrate:up'
 
 # Personal
 alias p="pass show -c"
+if [[ $platform == 'darwin' ]]; then
+  alias sdn="say \'done\'"
+fi
 
 # Homebrew
 if [[ $platform == 'darwin' ]]; then
