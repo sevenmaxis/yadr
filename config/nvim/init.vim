@@ -593,6 +593,12 @@ nnoremap q <Nop>
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 	" }}}
+
+  " Deoplete {{{
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    let g:deoplete#enable_at_startup = 1
+  " }}}
+
 " }}}
 
 " Language-Specific Configuration {{{
