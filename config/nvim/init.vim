@@ -703,6 +703,7 @@ nnoremap q <Nop>
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
   Plug 'https://github.com/Valloric/YouCompleteMe.git'
+  Plug 'ervandew/supertab'
 " }}}
 
 call plug#end()
