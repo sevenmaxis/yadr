@@ -172,6 +172,7 @@ call plug#begin('~/.config/nvim/plugged')
 " General Mappings {{{
 	" set a map leader for more key combos
 	let mapleader = '\'
+  nmap ; :
 
   " wipout buffer
   nmap <silent> <leader>b :bw<cr>
