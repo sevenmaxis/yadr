@@ -207,6 +207,9 @@ alias dbmr='spring rake db:migrate:redo'
 alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
+# Personal
+alias p="pass show -c"
+
 # Homebrew
 if [[ $platform == 'darwin' ]]; then
   alias brewu='brew update && brew upgrade &&\
