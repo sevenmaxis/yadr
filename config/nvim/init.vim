@@ -316,6 +316,9 @@ nnoremap q <Nop>
 		" when there are multiple windows open
 		autocmd FileType qf wincmd J
 		autocmd FileType qf nmap <buffer> q :q<cr>
+
+    " show window help on the right side
+    autocmd FileType help wincmd L
 	augroup END
 " }}}
 
