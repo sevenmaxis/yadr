@@ -264,5 +264,13 @@ function e() {
   printf '%s\n' "${(P)1}"
 }
 
+if [[ $platform == 'darwin' ]]; then
+  alias c="pbcopy"
+  alias v="pbpaste"
+elif [[ $platform == 'linux' ]]; then
+  alias c="xclip -selection clipboard"
+  alias v="xclip -o -selection clipboard"
+fi
+
 alias pb="tr -d '\n' | pbcopy"
 alias nv=nvim
