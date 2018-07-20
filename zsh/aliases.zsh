@@ -240,7 +240,11 @@ mktouch() {
 }
 
 if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
+  if [[ $platform == 'darwin' ]]; then
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
+  elif [[ $platform == 'linux' ]]; then
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+  fi
 fi
 
 # Temporarely: delete line '${(z)VISUAL:-${(z)EDITOR}}'"
