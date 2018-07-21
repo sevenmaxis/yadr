@@ -611,6 +611,12 @@ nnoremap q <Nop>
     let g:deoplete#enable_at_startup = 1
   " }}}
 
+  " Search customs
+  Plug 'haya14busa/incsearch.vim'
+  Plug 'haya14busa/incsearch-fuzzy.vim'
+  Plug 'haya14busa/incsearch-easymotion.vim'
+  Plug 'easymotion/vim-easymotion'
+
 " }}}
 
 " Language-Specific Configuration {{{
