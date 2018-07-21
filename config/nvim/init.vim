@@ -204,9 +204,6 @@ call plug#begin('~/.config/nvim/plugged')
 	" edit gitconfig
 	map <leader>eg :e! ~/.gitconfig<cr>
 
-	" clear highlighted search
-	noremap <space> :set hlsearch! hlsearch?<cr>
-
 	" activate spell-checking alternatives
 	nmap ;s :set invspell spelllang=en<cr>
 
@@ -611,11 +608,25 @@ nnoremap q <Nop>
     let g:deoplete#enable_at_startup = 1
   " }}}
 
-  " Search customs
-  Plug 'haya14busa/incsearch.vim'
-  Plug 'haya14busa/incsearch-fuzzy.vim'
-  Plug 'haya14busa/incsearch-easymotion.vim'
-  Plug 'easymotion/vim-easymotion'
+
+  " Custom search {{{
+
+    " Incsearch {{{
+      Plug 'haya14busa/incsearch.vim'
+      let g:incsearch#auto_nohlsearch = 1
+      map n  <Plug>(incsearch-nohl-n)
+      map N  <Plug>(incsearch-nohl-N)
+      map *  <Plug>(incsearch-nohl-*)
+      map #  <Plug>(incsearch-nohl-#)
+      map g* <Plug>(incsearch-nohl-g*)
+      map g# <Plug>(incsearch-nohl-g#)
+    " }}}
+
+    Plug 'haya14busa/incsearch-fuzzy.vim'
+    Plug 'haya14busa/incsearch-easymotion.vim'
+    Plug 'easymotion/vim-easymotion'
+
+  " }}}
 
 " }}}
 
