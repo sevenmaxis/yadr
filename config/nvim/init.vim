@@ -371,7 +371,7 @@ nnoremap q <Nop>
 	Plug 'sotte/presenting.vim', { 'for': 'markdown' }
 
 	" Fancy startup screen for vim {{{
-	Plug 'mhinz/vim-startify'
+  	Plug 'mhinz/vim-startify'
 
 		" Don't change to directory when selecting a file
 		let g:startify_files_number = 5
@@ -569,9 +569,9 @@ nnoremap q <Nop>
 	" vim-fugitive {{{
 		Plug 'tpope/vim-fugitive'
 		Plug 'tpope/vim-rhubarb' " hub extension for fugitive
-        Plug 'junegunn/gv.vim'
-        Plug 'sodapopcan/vim-twiggy'
-        Plug 'christoomey/vim-conflicted'
+    Plug 'junegunn/gv.vim'
+    Plug 'sodapopcan/vim-twiggy'
+    Plug 'christoomey/vim-conflicted'
 		nmap <silent> <leader>gs :Gstatus<cr>
 		nmap <leader>ge :Gedit<cr>
 		nmap <silent><leader>gr :Gread<cr>
