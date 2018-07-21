@@ -622,7 +622,13 @@ nnoremap q <Nop>
       map g# <Plug>(incsearch-nohl-g#)
     " }}}
 
-    Plug 'haya14busa/incsearch-fuzzy.vim'
+    " Incsearch-fuzzy {{{
+      Plug 'haya14busa/incsearch-fuzzy.vim'
+      map z/ <Plug>(incsearch-fuzzy-/)
+      map z? <Plug>(incsearch-fuzzy-?)
+      map zg/ <Plug>(incsearch-fuzzy-stay)
+    " }}}
+
     Plug 'haya14busa/incsearch-easymotion.vim'
     Plug 'easymotion/vim-easymotion'
 
