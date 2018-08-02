@@ -250,7 +250,11 @@ if command -v tmux>/dev/null; then
     [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
   elif [[ $platform == 'linux' ]]; then
     [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+  else
+    echo "Can't recognise the platform"
   fi
+else
+  echo "Can't find tmux"
 fi
 
 # Temporarely: delete line '${(z)VISUAL:-${(z)EDITOR}}'"
