@@ -41,7 +41,7 @@ elif [[ $platform == 'darwin' ]]; then
   alias ll='ls -alGh'
   alias ls='ls -Gh'
 fi
-alias l="ll"
+alias l="ls -1"
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
