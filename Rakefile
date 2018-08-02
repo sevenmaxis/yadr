@@ -339,17 +339,26 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 end
 
 def install_neovim
-  unless system('which nvim')
+  unless system('which nvim > /dev/null')
     puts "=========================================================="
     puts "Installing Neovim"
     puts "=========================================================="
     run %{ brew install neovim }
     puts
     puts "=========================================================="
+    puts "Installing config files for Neovim"
+    puts "=========================================================="
+    install_files('config/*')
+    puts ""
+    puts "=========================================================="
     puts "Installing plugins for Neovim"
     puts "=========================================================="
     run %{ nvim +PlugUpdate +qall }
     puts ""
+  else
+    puts "=========================================================="
+    puts "Neovim is already installed"
+    puts "=========================================================="
   end
 end
 
