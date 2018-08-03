@@ -277,7 +277,7 @@ def install_prezto
   end
 end
 
-def want_to_install? (section)
+def want_to_install?(section)
   if ENV["ASK"]=="true"
     puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
     STDIN.gets.chomp == 'y'
