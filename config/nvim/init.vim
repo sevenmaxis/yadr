@@ -634,6 +634,11 @@ nnoremap q <Nop>
 
   " }}}
 
+  " Get rid of bad habits
+  Plug 'takac/vim-hardtime'
+  let g:hardtime_default_on = 1
+  let g:hardtime_maxcount = 2
+
 " }}}
 
 " Language-Specific Configuration {{{
