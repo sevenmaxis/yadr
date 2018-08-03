@@ -345,10 +345,20 @@ def install_neovim
     puts "=========================================================="
     run %{ brew install neovim }
     puts
+
     puts "=========================================================="
     puts "Installing config files for Neovim"
     puts "=========================================================="
-    install_files('config/*')
+
+    target_dir = "#{ENV["HOME"]}/.config"
+    source_dir = "#{ENV["PWD"]}/config"
+
+    unless Dir.exist?(target_dir)
+      run %{ mkdir -p #{target_dir} }
+    end
+
+    run %{ ln -nfs "#{source_dir}/nvim" "#{target_dir}" }
+
     puts ""
     puts "=========================================================="
     puts "Installing plugins for Neovim"
