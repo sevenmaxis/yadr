@@ -736,7 +736,6 @@ nnoremap q <Nop>
 	Plug 'timcharper/textile.vim', { 'for': 'textile' }
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-  Plug 'https://github.com/Valloric/YouCompleteMe.git'
 
   Plug 'ervandew/supertab'
   let g:SuperTabDefaultCompletionType = "<c-n>"
