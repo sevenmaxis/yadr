@@ -174,7 +174,6 @@ call plug#begin('~/.config/nvim/plugged')
     let g:airline_theme='angr'
     let g:airline#extensions#tabline#show_splits = 1
     let g:airline#extensions#whitespace#enabled = 1
-    let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail'
     " enable airline tabline
     let g:airline#extensions#tabline#enabled = 1
