@@ -519,13 +519,13 @@ nnoremap q <Nop>
 		imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 		imap <c-x><c-l> <plug>(fzf-complete-line)
 
-		nnoremap <silent> <Leader>C :call fzf#run({
+		nnoremap <silent> <Leader>c :call fzf#run({
 		\	'source':
 		\	  map(split(globpath(&rtp, "colors/*.vim"), "\n"),
 		\		  "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
 		\	'sink':    'colo',
 		\	'options': '+m',
-		\	'left':    30
+		\	'left':    35
 		\ })<CR>
 
 		command! FZFMru call fzf#run({
