@@ -737,9 +737,6 @@ nnoremap q <Nop>
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 	Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 
-  Plug 'ervandew/supertab'
-  let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " }}}
 
 call plug#end()
