@@ -495,7 +495,7 @@ nnoremap q <Nop>
 	" FZF {{{
 		Plug '/usr/local/opt/fzf'
 		Plug 'junegunn/fzf.vim'
-		let g:fzf_layout = { 'down': '~25%' }
+		let g:fzf_layout = { 'right': '~40%' }
 
 		if isdirectory(".git")
 			" if in a git project, use :GFiles
@@ -532,7 +532,7 @@ nnoremap q <Nop>
 		\  'source':  v:oldfiles,
 		\  'sink':	  'e',
 		\  'options': '-m -x +s',
-		\  'down':	  '40%'})
+		\  'right':	  '40%'})
 
 		command! -bang -nargs=* Find call fzf#vim#grep(
 			\ 'rg --column --line-number --no-heading --follow --color=always '.<q-args>, 1,
