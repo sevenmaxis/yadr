@@ -186,8 +186,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General Mappings {{{
 	" set a map leader for more key combos
-	let mapleader = '\'
-  nmap ; :
+  let mapleader = ']'
 
   " wipout buffer
   nmap <silent> <leader>b :bw<cr>
@@ -204,7 +203,7 @@ call plug#begin('~/.config/nvim/plugged')
 	map <leader>eg :e! ~/.gitconfig<cr>
 
 	" activate spell-checking alternatives
-	nmap ;s :set invspell spelllang=en<cr>
+	" nmap ;s :set invspell spelllang=en<cr>
 
 	" markdown to html
 	nmap <leader>md :%!markdown --html4tags <cr>
