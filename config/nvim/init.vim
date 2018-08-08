@@ -85,6 +85,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Autosave on lose focus
   au BufLeave * silent! wall
 
+  " Vertical split at startup
+  au VimEnter * vsplit
+
   set clipboard=unnamed
 " }}}
 
