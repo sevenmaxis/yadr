@@ -584,6 +584,7 @@ nnoremap q <Nop>
 
 	" UltiSnips {{{
 		Plug 'SirVer/ultisnips' " Snippets plugin
+    Plug 'honza/vim-snippets'
     let g:UltiSnipsExpandTrigger="<c-i>"
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
