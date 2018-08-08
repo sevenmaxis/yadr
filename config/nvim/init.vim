@@ -720,6 +720,10 @@ nnoremap q <Nop>
     Plug 'sebastianmarkow/deoplete-rust' " Rust completion for Deoplete via Racerv
   " }}}
 
+  " Docker {{{
+    Plug 'ekalinin/Dockerfile.vim'
+  " }}}
+
   " Ranger {{{
     Plug 'francoiscabrol/ranger.vim'
     Plug 'rbgrouleff/bclose.vim'
