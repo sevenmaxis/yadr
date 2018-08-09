@@ -159,6 +159,7 @@ def install_homebrew
     brew install zsh git tmux reattach-to-user-namespace the_silver_searcher fzf tig
     translate-shell direnv
   }
+  run %{ brew install truncate } if RUBY_PLATFORM.downcase.include?("darwin")
   # To install useful key bindings and fuzzy completion
   run %{ $(brew --prefix)/opt/fzf/install }
   puts
@@ -289,7 +290,7 @@ end
 def install_files(*files)
   files = Dir.glob(files)
   method = :symlink # temporarily
-  
+
   files.each do |f|
     file = f.split('/').last
     source = "#{ENV["PWD"]}/#{f}"
