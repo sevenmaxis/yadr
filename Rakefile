@@ -157,7 +157,7 @@ def install_homebrew
   puts "======================================================"
   run %{
     brew install zsh git tmux reattach-to-user-namespace the_silver_searcher fzf tig
-    translate-shell
+    translate-shell direnv
   }
   # To install useful key bindings and fuzzy completion
   run %{ $(brew --prefix)/opt/fzf/install }
