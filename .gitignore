@@ -15,4 +15,5 @@ vim/sessions
 bin/subl
 tags
 config/nvim/plugged/*
+config/nvim/autoload/*
 direnv.log
