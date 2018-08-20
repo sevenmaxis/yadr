@@ -654,9 +654,6 @@ nnoremap q <Nop>
 		Plug 'tpope/vim-rails', { 'for': 'ruby' }
 	" }}}
 
-	" Ruby / Ruby on Rails
-	Plug 'tpope/vim-rails', { 'for': 'ruby' }
-
 	" JavaScript {{{
 		Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
 		Plug 'moll/vim-node', { 'for': 'javascript' }
