@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
 	nnoremap a a<ESC>zza
 
 	set nohidden " avoid keeping buffers in background
+  set nocompatible
 
 	" Turn Off Swap Files
 	set nobackup
@@ -652,6 +653,7 @@ nnoremap q <Nop>
 
 		" Ruby / Ruby on Rails
 		Plug 'tpope/vim-rails', { 'for': 'ruby' }
+    Plug 'vim-ruby/vim-ruby'
 	" }}}
 
 	" JavaScript {{{
