@@ -600,26 +600,12 @@ nnoremap q <Nop>
   " Custom search {{{
 
     " Incsearch {{{
-      Plug 'haya14busa/incsearch.vim'
-      let g:incsearch#auto_nohlsearch = 1
-      map n  <Plug>(incsearch-nohl-n)
-      map N  <Plug>(incsearch-nohl-N)
-      map *  <Plug>(incsearch-nohl-*)
-      map #  <Plug>(incsearch-nohl-#)
-      map g* <Plug>(incsearch-nohl-g*)
-      map g# <Plug>(incsearch-nohl-g#)
+      Plug 'haya14busa/is.vim'
+      map n <Plug>(is-nohl)
+      map N <Plug>(is-nohl)
     " }}}
 
-    " Incsearch-fuzzy {{{
-      Plug 'haya14busa/incsearch-fuzzy.vim'
-      map z/ <Plug>(incsearch-fuzzy-/)
-      map z? <Plug>(incsearch-fuzzy-?)
-      map zg/ <Plug>(incsearch-fuzzy-stay)
-    " }}}
-
-    Plug 'haya14busa/incsearch-easymotion.vim'
-    Plug 'easymotion/vim-easymotion'
-
+    Plug 'justinmk/vim-sneak'
   " }}}
 
   " Get rid of bad habits
