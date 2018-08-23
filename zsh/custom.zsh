@@ -1,5 +1,7 @@
 # Put here code like you're adding code to ~/.zshrc file
 
+export EDITOR=nvim
+
 eval "$(direnv hook zsh)"
 
 if command -v tmux>/dev/null; then
