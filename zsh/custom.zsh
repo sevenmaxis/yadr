@@ -2,8 +2,6 @@
 
 export EDITOR=nvim
 
-eval "$(direnv hook zsh)"
-
 if command -v tmux>/dev/null; then
   if [[ $platform == 'darwin' ]]; then
     [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
