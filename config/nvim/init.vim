@@ -616,107 +616,15 @@ nnoremap q <Nop>
 " }}}
 
 " Language-Specific Configuration {{{
-	" html / templates {{{
-		" emmet support for vim - easily create markdup wth CSS-like syntax
-		Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'eruby' ]}
-		let g:user_emmet_settings = {
-		\  'javascript.jsx': {
-		\	   'extends': 'jsx',
-		\  },
-		\}
+  Plug 'sheerun/vim-polyglot'
+" }}}
 
-		" match tags in html, similar to paren support
-		Plug 'gregsexton/MatchTag', { 'for': 'html' }
-
-		" html5 support
-		Plug 'othree/html5.vim', { 'for': 'html' }
-
-		" mustache support
-		Plug 'mustache/vim-mustache-handlebars'
-
-		" pug / jade support
-		Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
-
-		" Ruby / Ruby on Rails
-		Plug 'tpope/vim-rails', { 'for': 'ruby' }
-    Plug 'vim-ruby/vim-ruby'
-	" }}}
-
-	" JavaScript {{{
-		Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
-		Plug 'moll/vim-node', { 'for': 'javascript' }
-		Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-		Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
-	" }}}
-
-	" TypeScript {{{
-		Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-		Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-
-        Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
-		let g:tsuquyomi_completion_detail = 1
-		let g:tsuquyomi_disable_default_mappings = 1
-		let g:tsuquyomi_completion_detail = 1
-	" }}}
-
-
-	" Styles {{{
-		Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-		Plug 'groenewege/vim-less', { 'for': 'less' }
-		Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-		Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-		Plug 'gko/vim-coloresque'
-		Plug 'stephenway/postcss.vim', { 'for': 'css' }
-	" }}}
-
-	" markdown {{{
-		Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-
-		" Open markdown files in Marked.app - mapped to <leader>m
-		Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
-		nmap <leader>m :MarkedOpen!<cr>
-		nmap <leader>mq :MarkedQuit<cr>
-		nmap <leader>* *<c-o>:%s///gn<cr>
-	" }}}
-
-	" JSON {{{
-		Plug 'elzr/vim-json', { 'for': 'json' }
-		let g:vim_json_syntax_conceal = 0
-	" }}}
-
-  " Go {{{
-    Plug 'fatih/vim-go', { 'for': 'go' }
-    Plug 'jnwhiteh/vim-golang'
-    Plug 'sebdah/vim-delve'
-    let g:go_highlight_functions = 1
-    let g:go_highlight_methods = 1
-    let g:go_highlight_structs = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_build_constraints = 1
-    let g:go_highlight_types = 1
-    let g:go_highlight_fields = 1
-    let g:go_highlight_extra_types = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_build_constraints = 1
-    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=3 shiftwidth=3
-  " }}}
-
-  " Rust {{{
-    Plug 'sebastianmarkow/deoplete-rust' " Rust completion for Deoplete via Racerv
-  " }}}
-
-  " Docker {{{
-    Plug 'ekalinin/Dockerfile.vim'
-  " }}}
-
-  " Ranger {{{
-    Plug 'francoiscabrol/ranger.vim'
-    Plug 'rbgrouleff/bclose.vim'
-    let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
-    let g:ranger_replace_netrw = 1
-    let g:ranger_map_keys = 0
-    nmap = :Ranger<CR>
-  " }}}
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
+  let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+  let g:ranger_replace_netrw = 1
+  let g:ranger_map_keys = 0
+  nmap = :Ranger<CR>
 
 	Plug 'timcharper/textile.vim', { 'for': 'textile' }
 	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
