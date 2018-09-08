@@ -499,7 +499,7 @@ nnoremap q <Nop>
 		nmap <silent> <leader>g :GFiles?<cr>
 
 		nmap <silent> <leader>r :Buffers<cr>
-		nmap <silent> <leader>e :FZF<cr>
+		nmap <silent> <nowait> <leader>e :FZF<cr>
 		nmap <leader><tab> <plug>(fzf-maps-n)
 		xmap <leader><tab> <plug>(fzf-maps-x)
 		omap <leader><tab> <plug>(fzf-maps-o)
