@@ -1,12 +1,12 @@
 # Put here code like you're adding code to ~/.zshrc file
 
-export EDITOR=nvim
+export EDITOR='nvim'
 
 if command -v tmux>/dev/null; then
   if [[ $platform == 'darwin' ]]; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [[ $TERM_PROGRAM == 'iTerm.app' ]] && exec tmux attach
   elif [[ $platform == 'linux' ]]; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux attach
   else
     echo "Can't recognise the platform"
   fi
