@@ -201,11 +201,6 @@ call plug#begin('~/.config/nvim/plugged')
 	" set paste toggle
 	set pastetoggle=<leader>v
 
-	" edit ~/.config/nvim/init.vim
-	map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-	" edit gitconfig
-	map <leader>eg :e! ~/.gitconfig<cr>
-
 	" activate spell-checking alternatives
 	" nmap ;s :set invspell spelllang=en<cr>
 
