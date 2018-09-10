@@ -597,8 +597,6 @@ nnoremap q <Nop>
 
     " Incsearch {{{
       Plug 'haya14busa/is.vim'
-      map n <Plug>(is-nohl)
-      map N <Plug>(is-nohl)
     " }}}
 
     Plug 'justinmk/vim-sneak'
