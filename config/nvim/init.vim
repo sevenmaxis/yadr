@@ -487,7 +487,7 @@ nnoremap q <Nop>
 	" FZF {{{
 		Plug '/usr/local/opt/fzf'
 		Plug 'junegunn/fzf.vim'
-		let g:fzf_layout = { 'right': '~40%' }
+		let g:fzf_layout = { 'window': 'enew' }
 
 		if isdirectory(".git")
 			" if in a git project, use :GFiles
