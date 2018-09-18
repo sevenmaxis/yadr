@@ -13,3 +13,5 @@ if command -v tmux>/dev/null; then
 else
   echo "Can't find tmux"
 fi
+
+export HOMEBREW_GITHUB_API_TOKEN="63cdb22824c4a6f511f3eb9271c26f2c6fcd522b"
