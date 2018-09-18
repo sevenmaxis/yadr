@@ -15,3 +15,8 @@ else
 fi
 
 export HOMEBREW_GITHUB_API_TOKEN="63cdb22824c4a6f511f3eb9271c26f2c6fcd522b"
+
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+fi
