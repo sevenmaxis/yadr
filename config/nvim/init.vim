@@ -89,7 +89,7 @@ call plug#begin('~/.config/nvim/plugged')
   au BufLeave * silent! wall
 
   " Vertical split at startup
-  au VimEnter * vsplit
+  au VimEnter * if winwidth('%') >= 200 | vsplit | endif
 
   set clipboard=unnamed
 " }}}
