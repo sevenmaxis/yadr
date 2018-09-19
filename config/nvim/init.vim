@@ -348,7 +348,8 @@ nnoremap q <Nop>
 	" netrw helper
 	Plug 'tpope/vim-vinegar'
 
-	" single/multi line code handler: gS - split one line into multiple, gJ - combine multiple lines into one
+	" single/multi line code handler: gS - split one line into multiple,
+  " gJ - combine multiple lines into one
 	Plug 'AndrewRadev/splitjoin.vim'
 
 	" extended % matching
