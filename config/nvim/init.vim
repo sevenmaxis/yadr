@@ -136,6 +136,9 @@ call plug#begin('~/.config/nvim/plugged')
 	set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 	set showbreak=↪
 
+  " line number
+  set relativenumber
+
 	set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 	" switch cursor to line when in insert mode, and block when not
 	set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
