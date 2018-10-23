@@ -31,7 +31,7 @@ function rails() {
         return 0
      else
         echo "It seems there is no server running or you are not in a rails project root directory"
-        return 1
+        return 0
      fi
   elif [ "$1" = "restart" ]; then
      rails stop && rails start $2
