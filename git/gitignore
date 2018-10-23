@@ -45,3 +45,8 @@ Session.vim
 # SASS
 # ----------------------------------------------------------------------------------------------
 .sass-cache
+
+# Personal settings #
+*.sublime-*
+*.code-workspace
+.vscode/
