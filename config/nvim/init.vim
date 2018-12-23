@@ -607,14 +607,6 @@ nnoremap q <Nop>
     Plug 'justinmk/vim-sneak'
   " }}}
 
-  " Get rid of bad habits
-  Plug 'takac/vim-hardtime'
-  let g:hardtime_default_on = 1
-  let g:hardtime_maxcount = 2
-  let g:hardtime_showmsg = 1
-  let g:hardtime_ignore_quickfix = 1
-  let g:hardtime_allow_different_key = 1
-
 " }}}
 
 " Language-Specific Configuration {{{
