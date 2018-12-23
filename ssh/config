@@ -1,0 +1,42 @@
+Host *
+    tcpkeepalive yes
+    serveralivecountmax 5
+    serveraliveinterval 60
+    addkeystoagent yes
+
+Host github.com
+    IdentityFile ~/.ssh/id_rsa
+
+Host bitbucket.org
+    IdentityFile ~/.ssh/bitbucket
+
+Host desktop
+    SendEnv TMUX
+	hostname 192.168.1.197
+    serveraliveinterval 120
+    IdentityFile ~/.ssh/desktop
+    user megas
+
+Host discourse
+    hostname 37.48.87.4
+    user discourse
+
+Host pi
+    hostname 192.168.1.207
+    user pi
+
+Host github.com desktop vps pi
+    forwardagent yes
+
+Host atinfo
+    hostname 212.71.250.234
+    user root
+
+Host mongo
+    hostname 37.48.87.4
+    user mongo
+
+Host citrus_vps
+    hostname 148.251.81.162
+    user ruby
+    IdentityFile ~/.ssh/citrusdev_vps
