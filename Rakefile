@@ -157,7 +157,7 @@ def install_homebrew
   puts "======================================================"
   run %{
     brew install zsh git tmux reattach-to-user-namespace the_silver_searcher fzf tig
-    translate-shell direnv
+    translate-shell direnv lsd
   }
   run %{ brew install truncate } if RUBY_PLATFORM.downcase.include?("darwin")
   # To install useful key bindings and fuzzy completion
