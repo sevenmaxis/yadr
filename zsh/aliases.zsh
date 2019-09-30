@@ -218,7 +218,7 @@ fi
 # Homebrew
 if [[ $platform == 'darwin' ]]; then
   alias brewu='brew update && brew upgrade &&\
-               brew cleanup && brew doctor'
+               brew cleanup && brew doctor && gopass sync'
 elif [[ $platform == 'linux' ]]; then
   alias brewu='brew doctor && brew upgrade && brew update'
 fi
