@@ -27,3 +27,4 @@ function rails() {
      command rails $@
   fi;
 }
+
