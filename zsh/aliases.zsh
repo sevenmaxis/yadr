@@ -270,5 +270,6 @@ alias pb="tr -d '\n' | pbcopy"
 alias nv=nvim
 
 alias dc='docker-compose'
+alias dcr="docker container"
 
 alias clrtmux="tmux kill-session -t 0"
