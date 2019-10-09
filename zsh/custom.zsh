@@ -2,7 +2,7 @@
 
 export EDITOR='nvim'
 
-export HOMEBREW_GITHUB_API_TOKEN="5413451540578a78f8d76de773ff2c3b3ffec542"
+export HOMEBREW_GITHUB_API_TOKEN="c4c3042d4944377eab2bebd9c625c531ef45f70d"
 
 function rails() {
   if [ "$1" = "start" ]; then
