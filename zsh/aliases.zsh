@@ -83,7 +83,7 @@ alias gcim='git ci -m'
 alias gci='git ci'
 alias gco='git co'
 alias gcp='git cp'
-alias ga="git status --short | grep '^ M' | fzf -m --height=10% | cut -d ' ' -f3 | xargs -r git add"
+alias ga='git add $(git status --short | fzf --height=10% -m | awk '\''{print $2}'\'')'
 alias gap='git add -p'
 alias guns='git unstage'
 alias gunc='git uncommit'
