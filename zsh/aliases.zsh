@@ -37,11 +37,13 @@ if [[ $platform == 'linux' ]]; then
   alias ll='ls -alh --color=auto'
   alias ls='ls --color=auto'
 elif [[ $platform == 'darwin' ]]; then
-  function ll { ls -alGh $@ | ag -v '.DS_Store|.localized';}
-  alias ll='ls -alGh'
-  alias ls='ls -Gh'
+  alias ll='ls -lah'
+  alias l='ls -l'
+  alias la='ls -a'
+  alias lla='ls -la'
+  alias lt='ls --tree'
 fi
-alias l="ls -1a"
+alias l="ls -1"
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -60,6 +62,8 @@ alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 alias zr='source ~/.zshrc' #alias to reload zshrc
 
 # mimic vim functions
+alias vim="nvim"
+alias vi="nvim"
 alias :q='exit'
 
 # vimrc editing
@@ -83,7 +87,7 @@ alias gcim='git ci -m'
 alias gci='git ci'
 alias gco='git co'
 alias gcp='git cp'
-alias ga='git add $(git status --short | fzf --height=10% -m | awk '\''{print $2}'\'')'
+alias gp='git add $(git ls-files -m -o --exclude-standard | fzf -m)'
 alias gap='git add -p'
 alias guns='git unstage'
 alias gunc='git uncommit'
@@ -97,6 +101,7 @@ alias gr='git rebase'
 alias gra='git rebase --abort'
 alias ggrc='git rebase --continue'
 alias gbi='git rebase --interactive'
+alias gria='git rebase --interactive --autosquash'
 alias gl='git l'
 alias glg='git l'
 alias glog='git l'
@@ -228,7 +233,7 @@ function t {
   case "$*" in
     [A-Za-z]* ) trans -sp en:ru $*
       ;;
-    [А-Яа-я]* ) trans -p ru:en $*
+    [А-Яа-я]* ) trans ru:en $*
       ;;
     *)          echo "wrong language"
   esac
@@ -273,3 +278,15 @@ alias dc='docker-compose'
 alias dcr="docker container"
 
 alias clrtmux="tmux kill-session -t 0"
+alias tx="tmuxinator"
+alias txstart='for project in $(tmuxinator list | sed "1d"); do
+  tmuxinator start "$project"
+done
+tmux attach'
+
+alias be='bundle exec'
+alias rc='RUBYOPT="-W:no-deprecated -W:no-experimental" bundle exec rails console'
+alias rs='RUBYOPT="-W:no-deprecated -W:no-experimental" bundle exec rails server'
+alias pry='RUBYOPT="-W:no-deprecated -W:no-experimental" pry'
+alias cat='ccat'
+alias typora="open -a typora"
