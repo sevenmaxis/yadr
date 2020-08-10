@@ -1,8 +1,8 @@
-# Put here code like you're adding code to ~/.zshrc file
+# Put there code like you're adding code to ~/.zshrc file
 
 export EDITOR='nvim'
 
-export HOMEBREW_GITHUB_API_TOKEN="c4c3042d4944377eab2bebd9c625c531ef45f70d"
+export HOMEBREW_GITHUB_API_TOKEN="8ca65c315f4a7e1cf83830b151a9baef77c15ed5"
 
 function rails() {
   if [ "$1" = "start" ]; then

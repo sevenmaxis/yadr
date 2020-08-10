@@ -290,3 +290,9 @@ alias rs='RUBYOPT="-W:no-deprecated -W:no-experimental" bundle exec rails server
 alias pry='RUBYOPT="-W:no-deprecated -W:no-experimental" pry'
 alias cat='ccat'
 alias typora="open -a typora"
+
+fag(){
+  local line
+  line=`ag --nocolor "$1" | fzf` \
+  && code $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
+}
