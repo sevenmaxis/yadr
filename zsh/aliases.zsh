@@ -218,6 +218,7 @@ alias dbmu='spring rake db:migrate:up'
 alias p="pass show -c"
 if [[ $platform == 'darwin' ]]; then
   alias sdn="say \'done\'"
+  alias pi="afplay /System/Library/Sounds/Submarine.aiff"
 fi
 
 # Homebrew
@@ -295,4 +296,63 @@ fag(){
   local line
   line=`ag --nocolor "$1" | fzf` \
   && code $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
+}
+
+heroku(){
+  windowname=$(tmux display-message -p '#W')
+ 
+  trap "{ tmux rename-window "$windowname" }" EXIT
+
+  tmux rename-window "heroku $*"
+
+  command heroku "$@"
+
+  afplay /System/Library/Sounds/Submarine.aiff
+
+  tmux rename-window "$windowname"
+}
+
+rails(){
+  windowname=$(tmux display-message -p '#W')
+
+  trap "{ afplay /System/Library/Sounds/Sosumi.aiff }" EXIT
+
+  # tmux rename-window "rails $(echo "$@")"
+
+  command rails "$@"
+
+  tmux rename-window "$windowname"
+}
+
+bundle(){
+  export RUBYOPT='-W0'
+
+  windowname=$(tmux display-message -p '#W')
+
+  concat=false
+  string=""
+  playsound=false
+  for var in "$@"; do
+    if [ "$concat" = true ]; then
+      string+="$var "
+    fi
+    if [ "$var" = 'exec' ]; then
+      concat=true
+    fi
+    if [ "$var" = 'rspec' ]; then
+      playsound=true
+    fi
+  done
+
+  if [ ! -z "$string" ]; then
+    tmux rename-window "$string"
+  fi
+
+  command bundle "$@"
+
+  if [ $playsound ]; then
+    afplay /System/Library/Sounds/Submarine.aiff
+  fi
+  
+  tmux rename-window "$windowname"
 }
