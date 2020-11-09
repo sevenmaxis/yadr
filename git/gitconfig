@@ -109,10 +109,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [core]
   autocrlf = false
   editor = vim
@@ -232,10 +228,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [advice]
 # set your user tokens as environment variables, such as ~/.secrets
 # set your user tokens as environment variables, such as ~/.secrets
@@ -348,10 +340,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 # set your user tokens as environment variables, such as ~/.secrets
 # set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
@@ -463,10 +451,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 # set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
 # set your user tokens as environment variables, such as ~/.secrets
@@ -581,10 +565,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [advice]
   statusHints = false
 [diff]
@@ -598,9 +578,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red 52
@@ -716,10 +693,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [advice]
   statusHints = false
 [diff]
@@ -733,9 +706,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -754,9 +724,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 # See the README for examples.
 [color]
   ui = true
@@ -866,10 +833,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [core]
   autocrlf = false
   editor = vim
@@ -887,9 +850,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 # set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
 # set your user tokens as environment variables, such as ~/.secrets
@@ -1004,10 +964,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [advice]
   statusHints = false
 [diff]
@@ -1021,9 +977,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red 52
@@ -1139,10 +1092,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [advice]
   statusHints = false
 [diff]
@@ -1156,9 +1105,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -1177,9 +1123,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 # See the README for examples.
 [color]
   ui = true
@@ -1289,10 +1232,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [core]
   autocrlf = false
   editor = vim
@@ -1310,10 +1249,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
-  statusHints = false
 [diff]
   # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
@@ -1325,9 +1260,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red 52
@@ -1443,10 +1375,6 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
 [advice]
   statusHints = false
 [diff]
@@ -1460,9 +1388,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -1481,9 +1406,6 @@
   enabled = true
 [include]
   path = .gitconfig.user
-[user]
-	email = Sergey Gopkalo@gmail.com
-	name = Serhii Hopkalo
 # See the README for examples.
 [color]
   ui = true
@@ -1596,7 +1518,7 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = current
+	default = current
 [core]
   autocrlf = false
   editor = vim
@@ -1615,5 +1537,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	email = Sergey Gopkalo@gmail.com
 	name = Serhii Hopkalo
+	email = Serhii.Hopkalo@gmail.com
