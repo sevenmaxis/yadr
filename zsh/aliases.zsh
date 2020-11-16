@@ -292,17 +292,9 @@ alias pry='RUBYOPT="-W:no-deprecated -W:no-experimental" pry'
 alias cat='ccat'
 alias typora="open -a typora"
 
-fag(){
-  local line
-  line=`ag --nocolor "$1" | fzf` \
-  && code $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
-}
-
 heroku(){
   windowname=$(tmux display-message -p '#W')
  
-  trap "{ tmux rename-window "$windowname" }" EXIT
-
   tmux rename-window "heroku $*"
 
   command heroku "$@"
@@ -310,12 +302,14 @@ heroku(){
   afplay /System/Library/Sounds/Submarine.aiff
 
   tmux rename-window "$windowname"
+
+  trap "{ tmux rename-window "$windowname" }" EXIT
 }
 
 rails(){
   windowname=$(tmux display-message -p '#W')
 
-  trap "{ afplay /System/Library/Sounds/Sosumi.aiff }" EXIT
+  # trap "{ afplay /System/Library/Sounds/Sosumi.aiff }" EXIT
 
   # tmux rename-window "rails $(echo "$@")"
 
