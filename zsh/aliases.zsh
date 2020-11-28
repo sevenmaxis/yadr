@@ -293,35 +293,38 @@ alias cat='ccat'
 alias typora="open -a typora"
 
 heroku(){
-  windowname=$(tmux display-message -p '#W')
+  local name=$(tmux display-message -p '#W')
+  local index=$(tmux display-message -p '#I')
+  local session=$(tmux display-message -p '#S')
+  local line=$(echo $* | sed -E 's/(run )|(--app )//g')
  
-  tmux rename-window "heroku $*"
+  tmux rename-window -t $session:$index "heroku $line"
 
   command heroku "$@"
 
   afplay /System/Library/Sounds/Submarine.aiff
 
-  tmux rename-window "$windowname"
-
-  trap "{ tmux rename-window "$windowname" }" EXIT
+  tmux rename-window -t $session:$index $name
 }
 
 rails(){
-  windowname=$(tmux display-message -p '#W')
+  local name=$(tmux display-message -p '#W')
+  local index=$(tmux display-message -p '#I')
+  local session=$(tmux display-message -p '#S')
 
-  # trap "{ afplay /System/Library/Sounds/Sosumi.aiff }" EXIT
-
-  # tmux rename-window "rails $(echo "$@")"
+  tmux rename-window -t $session:$index "rails $@"
 
   command rails "$@"
 
-  tmux rename-window "$windowname"
+  tmux rename-window -t $session:$index $name
 }
 
 bundle(){
   export RUBYOPT='-W0'
 
-  windowname=$(tmux display-message -p '#W')
+  local name=$(tmux display-message -p '#W')
+  local index=$(tmux display-message -p '#I')
+  local session=$(tmux display-message -p '#S')
 
   concat=false
   string=""
@@ -339,7 +342,7 @@ bundle(){
   done
 
   if [ ! -z "$string" ]; then
-    tmux rename-window "$string"
+    tmux rename-window -t $session:$index $string
   fi
 
   command bundle "$@"
@@ -348,5 +351,68 @@ bundle(){
     afplay /System/Library/Sounds/Submarine.aiff
   fi
   
-  tmux rename-window "$windowname"
+  tmux rename-window -t $session:$index $name
 }
+
+fs() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+  tmux switch-client -t "$session"
+}
+
+function cd() {
+    if [[ "$#" != 0 ]]; then
+        builtin cd "$@";
+        return
+    fi
+    while true; do
+        local lsd=$(echo ".." && ls -p | grep '/$' | sed 's;/$;;')
+        local dir="$(printf '%s\n' "${lsd[@]}" |
+            fzf --reverse --preview '
+                __cd_nxt="$(echo {})";
+                __cd_path="$(echo $(pwd)/${__cd_nxt} | sed "s;//;/;")";
+                echo $__cd_path;
+                echo;
+                ls -p --color=always "${__cd_path}";
+        ')"
+        [[ ${#dir} != 0 ]] || return 0
+        builtin cd "$dir" &> /dev/null
+    done
+}
+
+chrome() {
+  local cols sep google_history open
+  cols=$(( COLUMNS / 3 ))
+  sep='{::}'
+
+  if [ "$(uname)" = "Darwin" ]; then
+    google_history="$HOME/Library/Application Support/Google/Chrome/Default/History"
+    open=open
+  else
+    google_history="$HOME/.config/google-chrome/Default/History"
+    open=xdg-open
+  fi
+  cp -f "$google_history" /tmp/h
+  sqlite3 -separator $sep /tmp/h \
+    "select substr(title, 1, $cols), url
+     from urls order by last_visit_time desc" |
+  awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
+  fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs $open > /dev/null 2> /dev/null
+}
+
+fco() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi) || return
+  git checkout $(awk '{print $2}' <<<"$target" )
+}
+
