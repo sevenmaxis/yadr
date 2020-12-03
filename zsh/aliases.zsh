@@ -296,12 +296,11 @@ heroku(){
   local name=$(tmux display-message -p '#W')
   local index=$(tmux display-message -p '#I')
   local session=$(tmux display-message -p '#S')
-  #local line=$(echo $* | sed -E 's/(run )|(--app )//g')
   local line=`echo $* | sed -E 's/(run )|(--app )|(--app=)//g'`
  
   tmux rename-window -t $session:$index "heroku $line"
 
-  trap "{ tmux rename-window sigint }" SIGINT
+  trap "{ tmux rename-window -t $session:$index $name }" SIGINT
 
   command heroku "$@"
 
@@ -317,7 +316,7 @@ rails(){
 
   tmux rename-window -t $session:$index "rails $@"
 
-  trap "{ tmux rename-window sigint }" SIGINT
+  trap "{ tmux rename-window -t $session:$index $name }" SIGINT
 
   command rails "$@"
 
@@ -349,6 +348,8 @@ bundle(){
   if [ ! -z "$string" ]; then
     tmux rename-window -t $session:$index $string
   fi
+
+  trap "{ tmux rename-window -t $session:$index $name }" SIGINT
 
   command bundle "$@"
 
